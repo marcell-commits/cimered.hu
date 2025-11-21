@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Címered.hu - Méltó jelképek, időtálló kivitelben</title>
+    <!-- Tailwind CSS betöltése --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- JAVÍTVA: Google Font (Inter) -> (Merriweather) --><link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Alapértelmezett betűtípus beállítása */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* JAVÍTVA: Betűtípus cserélve 'Merriweather'-re */
+        body {
+            font-family: 'Merriweather', serif;
+        }
+        
+        /* EGYEDI SZÍNPALETTA (Stílusos, professzionális: Pala-szürke és Antik Arany) */
+        .bg-brand-slate { background-color: #334E68; } /* Sötét, elegáns pala-kék/szürke */
+        .text-brand-slate { color: #334E68; }
+        .border-brand-slate { border-color: #334E68; }
+        
+        .bg-brand-gold { background-color: #B08D57; } /* Meleg, antik arany/bronz */
+        .text-brand-gold { color: #B08D57; }
+        .border-brand-gold { border-color: #B08D57; }
+        
+        /* Hover effekt a kártyákon és gombokon */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- HÁTTÉR ANIMÁCIÓ --- */
+        @keyframes heroFade {
+            0%, 45%  { background-image: url('https://github.com/marcell-commits/cimered.hu/blob/main/Cak.png?raw=true'); opacity: 1; }
+            50%      { opacity: 0; }
+            55%, 95% { background-image: url('https://github.com/marcell-commits/cimered.hu/blob/main/Kondorfa.png?raw=true'); opacity: 1; }
+            100%     { opacity: 0; }
+        }
+
+        .animated-bg {
+            animation: heroFade 20s linear infinite;
+            background-size: cover;
+            background-position: center center;
+            opacity: 0; /* Kezdeti opacity, az animáció felülírja */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 1. Fejléc és Navigáció --><header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logó --><a href="#" class="text-3xl font-bold text-brand-slate tracking-tight">
+                Címered<span class="text-brand-gold">.hu</span>
+            </a>
+            
+            <!-- Navigációs linkek (asztali) --><div class="hidden md:flex space-x-7 items-center">
+                <a href="#kezdolap" class="text-gray-700 hover:text-brand-slate font-semibold transition-colors duration-300">Kezdőlap</a>
+                <a href="#kinek" class="text-gray-700 hover:text-brand-slate font-semibold transition-colors duration-300">Kinek készül?</a>
+                <a href="#munkaink" class="text-gray-700 hover:text-brand-slate font-semibold transition-colors duration-300">Munkáink</a>
+                <a href="#kapcsolat" class="bg-brand-gold text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:bg-opacity-90 transition-all duration-300 text-lg">Kapcsolat</a>
+            </div>
+            
+            <!-- Mobil menü gomb --><div class="md:hidden">
+                <a href="#kapcsolat" class="bg-brand-gold text-white font-bold py-2.5 px-5 rounded-lg shadow-md text-sm">Kapcsolat</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. Nyitó Szekció ("Hero") --><main id="kezdolap">
+        <section class="bg-brand-slate text-white relative overflow-hidden">
+            
+            <!-- 1. Animált háttér réteg (z-0) --><div class="animated-bg absolute inset-0 z-0 opacity-100"></div>
+            
+            <!-- Áttetsző arany overlay réteg --><div class="absolute inset-0 z-10 bg-brand-gold opacity-50"></div>
+
+            <!-- 2. Sötétítő 'overlay' réteg (z-20) --><div class="absolute inset-0 z-20 bg-gradient-to-br from-brand-slate via-brand-slate to-gray-800 opacity-90"></div>
+
+            <!-- 3. Tartalmi réteg (z-30) --><div class="max-w-7xl mx-auto px-6 py-20 md:py-32 text-center relative z-30">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+                    A múlt ereje, a jelen méltósága.
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto font-light opacity-90 drop-shadow-lg">
+                    Exkluzív, prémium minőségű címerek és intézményi jelképek készítése. Professzionális megoldás önkormányzatok, iskolák, cégek és házasságkötő termekbe,
+                    valamint exkluzív ajándékként testvérvárosok számára.
+                </p>
+                <a href="#munkaink" class="bg-white text-brand-slate font-bold text-lg py-3 px-10 rounded-lg shadow-xl hover:bg-gray-200 transform hover:scale-105 transition-all duration-300">
+                    Tekintse meg alkotásainkat
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 3. Kinek készül? Szekció --><section id="kinek" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-slate mb-16">
+                Kinek adjuk kezébe a hagyományt?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                
+                <!-- Kártya 1: Önkormányzatok --><div class="bg-white p-8 rounded-lg shadow-lg text-center transition-all duration-300 card-hover">
+                    <svg class="w-16 h-16 text-brand-slate mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Önkormányzatok</h3>
+                    <p class="text-gray-700">
+                        Tanácstermek, polgármesteri irodák és közösségi terek büszke díszei. A helyi identitás reprezentatív ékességei.
+                    </p>
+                </div>
+
+                <!-- Kártya 2: Iskolák --><div class="bg-white p-8 rounded-lg shadow-lg text-center transition-all duration-300 card-hover">
+                    <svg class="w-16 h-16 text-brand-slate mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 8-4 8 4"/><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"/><path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4"/><path d="M18 5v17"/><path d="M6 5v17"/><path d="M12 5v17"/></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Oktatási intézmények</h3>
+                    <p class="text-gray-700">
+                        Iskolák, egyetemek aulájába, dísztermébe – az összetartozás és a szellemiség méltó szimbóluma.
+                    </p>
+                </div>
+
+                <!-- Kártya 3: Cégek --><div class="bg-white p-8 rounded-lg shadow-lg text-center transition-all duration-300 card-hover">
+                    <svg class="w-16 h-16 text-brand-slate mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Vállalatok, Cégek</h3>
+                    <p class="text-gray-700">
+                        Tárgyalókba, recepcióra a professzionális arculatért. Exkluzív üzleti ajándék partnereknek.
+                    </p>
+                </div>
+
+                <!-- Kártya 4: Házasságkötő termek --><div class="bg-white p-8 rounded-lg shadow-lg text-center transition-all duration-300 card-hover">
+                    <svg class="w-16 h-16 text-brand-slate mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 14H7a4 4 0 0 0-4 4v2a2 2 0 0 0 2 2h6"/><path d="M18 10h-2a4 4 0 0 0-4 4v2a2 2 0 0 0 2 2h6.5a2.5 2.5 0 0 0 2.5-2.5v-1a2.5 2.5 0 0 0-2.5-2.5Z"/><path d="M12 2C9.28 2 7 4.28 7 7c0 3 2 5 5 8s5-2 5-5c0-2.72-2.28-5-5-5Z"/><path d="m12 7-1.3 1.3"/></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Házasságkötő termek</h3>
+                    <p class="text-gray-700">
+                        Az ünnepélyes pillanatok méltó kiegészítője, az otthon vagy a helyi közösség hivatalos jelképe.
+                    </p>
+                </div>
+                
+                <!-- Kártya 5: Testvérvárosok --><div class="bg-white p-8 rounded-lg shadow-lg text-center transition-all duration-300 card-hover">
+                    <svg class="w-16 h-16 text-brand-gold mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Testvértelepülési Ajándék</h3>
+                    <p class="text-gray-700">
+                        Egyedi és maradandó protokoll ajándék delegációk fogadására, hivatalos ünnepekre, vagy a testvértelepülés meglátogatásakor.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Munkáink / Galéria Szekció --><section id="munkaink" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-slate mb-6">
+                Műhelyünk alkotásai
+            </h2>
+            <p class="text-center text-lg text-gray-700 mb-16 max-w-4xl mx-auto">
+                Minden címer egy történetet hordoz. Mi arra törekszünk, hogy ezt a történetet a legapróbb részletekig, precíz, exkluzív kivitelben jelenítsük meg, méltó módon.
+            </p>
+            
+            <!-- Képgaléria (A feltöltött képeid) --><div class="flex overflow-x-auto space-x-8 pb-8 scrollbar-hide" style="scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;">
+                <!-- Scrollbar-hide fallback --><style>
+                    .scrollbar-hide::-webkit-scrollbar { display: none; }
+                </style>
+                
+                <!-- Kártya 1: Cák (ÚJ) --><div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-xl shadow-xl overflow-hidden group transition-all duration-300 card-hover" style="scroll-snap-align: start;">
+                    <img src="https://github.com/marcell-commits/cimered.hu/blob/main/Cak.png?raw=true" alt="Cák címere" class="w-full h-80 object-contain transform group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger">
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 text-center">Cák község címere</h3>
+                        <p class="text-center text-gray-600 mt-2">Precízen kidolgozott heraldikai elemek, prémium minőségben.</p>
+                    </div>
+                </div>
+
+                <!-- Kártya 2: Kondorfa (ÚJ) --><div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-xl shadow-xl overflow-hidden group transition-all duration-300 card-hover" style="scroll-snap-align: start;">
+                    <img src="https://github.com/marcell-commits/cimered.hu/blob/main/Kondorfa.png?raw=true" alt="Kondorfa címere" class="w-full h-80 object-contain transform group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger">
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 text-center">Kondorfa község címere</h3>
+                        <!-- JAVÍTVA: "megvalósítása" -> "ábrázolása" --><p class="text-center text-gray-600 mt-2">A tulok részletgazdag, éles vonalvezetésű ábrázolása.</p>
+                    </div>
+                </div>
+
+                <!-- Kártya 3: Mesterháza (RÉGI) --><div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-xl shadow-xl overflow-hidden group transition-all duration-300 card-hover" style="scroll-snap-align: start;">
+                    <img src="https://github.com/marcell-commits/cimered.hu/blob/main/Mesterhaza.png?raw=true" alt="Mesterháza címere" class="w-full h-80 object-contain transform group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger">
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 text-center">Mesterháza község címere</h3>
+                        <p class="text-center text-gray-600 mt-2">Élénk, heraldikailag tiszta színek a karakteres összhatásért.</p>
+                    </div>
+                </div>
+                
+                <!-- Kártya 4: Vasalja (ÚJ) --><div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-xl shadow-xl overflow-hidden group transition-all duration-300 card-hover" style="scroll-snap-align: start;">
+                    <img src="https://github.com/marcell-commits/cimered.hu/blob/main/Vasalja.png?raw=true" alt="Vasalja címere" class="w-full h-80 object-contain transform group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger">
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 text-center">Vasalja község címere</h3>
+                        <p class="text-center text-gray-600 mt-2">Részletgazdag ábrázolás, éles vonalakkal és telt színekkel.</p>
+                    </div>
+                </div>
+                
+                <!-- Kártya 5: Sárvár (ÚJ) --><div class="flex-shrink-0 w-80 md:w-96 bg-white rounded-xl shadow-xl overflow-hidden group transition-all duration-300 card-hover" style="scroll-snap-align: start;">
+                    <img src="https://github.com/marcell-commits/cimered.hu/blob/main/Sarvar.png?raw=true" alt="Sárvár címere" class="w-full h-80 object-contain transform scale-105 group-hover:scale-110 transition-transform duration-500 cursor-pointer gallery-trigger">
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 text-center">Sárvár város címere</h3>
+                        <p class="text-center text-gray-600 mt-2">Prémium, részletgazdag kivitel, amely kiemeli a vár és a kapu részleteit.</p>
+                    </div>
+                </div>
+
+                 <!-- Extra padding a végére a görgetéshez --><div class="flex-shrink-0 w-1"></div>
+            </div>
+
+            <!-- Görgetési segédlet mobilra --><div class="text-center text-gray-500 mt-8 md:hidden">
+                <span class="inline-flex items-center text-sm">
+                    <svg class="w-5 h-5 mr-2 animate-pulse" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
+                    Húzza a galéria görgetéséhez
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Miért minket válasszon? Szekció --><section class="py-16 md:py-24 bg-brand-slate text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                Miért a Címered.hu a jó választás?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <div class="text-center">
+                    <div class="bg-brand-gold text-brand-slate w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.42 10.18a.5.5 0 0 0-.42-.18H
+                                4a.5.5 0 0 0-.42.18c-.35.58-.65 1.25-.9 2.02A.5.5 0 0 0 3 13h18a.5.5 0 0 0 .47-.75c-.25-.77-.55-1.44-.9-2.07Z"/><path d="M4 13h16l-1.6 8H5.6L4 13Z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Exkluzív megjelenés</h3>
+                    <p class="opacity-90">
+                        Modern technikával, precízen készítjük címereit. A tökéletesen éles vonalvezetés és részletgazdagság prémium megjelenést biztosít.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-brand-gold text-brand-slate w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.648 0-.926-.746-1.648-1.648-1.648s-1.648.746-1.648 1.648v.312c0 .822-.67 1.492-1.492 1.492-.822 0-1.492-.67-1.492-1.492v-.312c0-1.844 1.492-3.336 3.336-3.336s3.336 1.492 3.336 3.336v.312c0 .822-.67 1.492-1.492 1.492-.822 0-1.492-.67-1.492-1.492v-.312a2.3 2.3 0 0 0-4.6 0v.312c0 .822-.67 1.492-1.492 1.492-.822 0-1.492-.67-1.492-1.492v-.312a6.5 6.5 0 0 1 13 0v.312c0 .822-.67 1.492-1.492 1.492-.822 0-1.492-.67-1.492-1.492v-.312c0-1.844 1.492-3.336 3.336-3.336s3.336 1.492 3.336 3.336v.312c0 .822-.67 1.492-1.492 1.492A10 10 0 0 0 12 2Z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Telt, tartós színek</h3>
+                    <!-- JAVÍTVA: UV-álló -> Beltéri használat --><p class="opacity-90">
+                        A heraldikai színeket a lehető legpontosabban, telt árnyalatokkal adjuk vissza. A termék kizárólag beltéri használatra javasolt, közvetlen napfénytől és hőtől védve.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-brand-gold text-brand-slate w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Reprezentatív minőség</h3>
+                    <p class="opacity-90">
+                        Minden darab gondos odafigyeléssel, magyar műhelyben készül. A minőségellenőrzés garantálja, hogy a termék méltó legyen bármely protokolláris eseményhez.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Kapcsolat / Ajánlatkérés Szekció --><section id="kapcsolat" class="py-16 md:py-24 bg-gray-50 text-gray-900">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-slate mb-6">Vegye fel velünk a kapcsolatot!</h2>
+            <p class="text-lg mb-10 opacity-90">
+                Kérje egyedi ajánlatunkat! Segítünk megálmodni és megvalósítani szervezetének méltó jelképét. Keressen bizalommal az alábbi elérhetőségeken.
+            </p>
+            
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl text-left border-t-4 border-brand-gold">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center md:text-left">Sipos Marcell</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 text-brand-gold mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:+36202891844" class="text-xl md:text-2xl text-brand-slate hover:text-brand-gold transition-colors duration-300 font-semibold">+36 20 289 1844</a>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 text-brand-gold mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:info@cimered.hu" class="text-xl md:text-2xl text-brand-slate hover:text-brand-gold transition-colors duration-300 font-semibold">info@cimered.hu</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. Lábléc --><footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-lg font-bold text-white mb-2">Címered.hu</p>
+            <p class="mb-4">
+                <a href="mailto:info@cimered.hu" class="hover:text-white transition-colors duration-300">info@cimered.hu</a> | 
+                <a href="tel:+36202891844" class="hover:text-white transition-colors duration-300">+36 20 289 1844</a>
+            </p>
+            <p class="text-sm">
+                &copy; 2025 Sipos Marcell E.V. - Minden jog fenntartva.
+                <br>
+                <!-- Impresszum trigger link --><a href="#" id="impressum-trigger" class="text-gray-400 hover:text-white transition-colors duration-300 underline">Impresszum</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- 8. Impresszum Modal --><div id="impressum-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <!-- Overlay -->
+        <div id="modal-overlay" class="absolute inset-0 bg-black opacity-60"></div>
+        
+        <!-- Tartalom -->
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg p-6 md:p-8 relative z-10">
+            <button id="modal-close" class="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-4xl font-light">&times;</button>
+            <h2 class="text-2xl font-bold text-brand-slate mb-5">Impresszum</h2>
+            <div class="text-gray-700 space-y-2 text-left">
+                <p><strong>Szolgáltató:</strong> Sipos Marcell E.V.</p>
+                <p><strong>Székhely:</strong> 9600 Sárvár, Hunyadi János utca 30</p>
+                <p><strong>Telephely:</strong> 9700 Szombathely, Puskás Tivadar utca 3-5</p>
+                <p><strong>Adószám:</strong> 44955250-1-38</p>
+                <p><strong>Nyilvántartási szám:</strong> 58277333</p>
+                <p><strong>E-mail:</strong> <a href="mailto:info@cimered.hu" class="text-brand-slate hover:text-brand-gold">info@cimered.hu</a></p>
+                <p><strong>Telefon:</strong> <a href="tel:+36202891844" class="text-brand-slate hover:text-brand-gold">+36 20 289 1844</a></p>
+                <hr class="my-4">
+                <p class="text-sm">
+                    <strong>Tárhelyszolgáltató:</strong> Cloudflare, Inc.<br>
+                    Cím: 101 Townsend St, San Francisco, CA 94107, USA<br>
+                    Email: legal@cloudflare.com
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 9. Kép Popup Modal (ÚJ) --><div id="image-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 hidden">
+        <!-- Overlay -->
+        <div id="image-modal-overlay" class="absolute inset-0 bg-black opacity-80"></div>
+        <!-- Bezárás gomb -->
+        <button id="image-modal-close" class="absolute top-4 right-4 text-white hover:text-gray-300 text-6xl font-light z-[70]">&times;</button>
+        <!-- Kép konténer -->
+        <div class="relative z-[65] max-w-4xl max-h-[90vh]">
+            <img id="popup-image" src="" alt="Nagyított címer kép" class="w-full h-full object-contain rounded-lg shadow-2xl">
+        </div>
+    </div>
+
+
+    <!-- 10. JavaScript (bővítve a kép popup-pal) --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Impresszum Modal Logika ---
+            const impressumModal = document.getElementById('impressum-modal');
+            const impressumTrigger = document.getElementById('impressum-trigger');
+            const impressumCloseBtn = document.getElementById('modal-close');
+            const impressumOverlay = document.getElementById('modal-overlay');
+
+            const openImpressumModal = () => impressumModal.classList.remove('hidden');
+            const closeImpressumModal = () => impressumModal.classList.add('hidden');
+
+            if (impressumTrigger) {
+                impressumTrigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openImpressumModal();
+                });
+            }
+            if (impressumCloseBtn) impressumCloseBtn.addEventListener('click', closeImpressumModal);
+            if (impressumOverlay) impressumOverlay.addEventListener('click', closeImpressumModal);
+            
+            // --- Kép Popup Modal Logika (ÚJ) ---
+            const imageModal = document.getElementById('image-modal');
+            const imageModalCloseBtn = document.getElementById('image-modal-close');
+            const imageModalOverlay = document.getElementById('image-modal-overlay');
+            const popupImage = document.getElementById('popup-image');
+            const galleryTriggers = document.querySelectorAll('.gallery-trigger');
+
+            const openImageModal = (src) => {
+                if (popupImage) popupImage.src = src;
+                if (imageModal) imageModal.classList.remove('hidden');
+            };
+            
+            const closeImageModal = () => {
+                if (imageModal) imageModal.classList.add('hidden');
+                if (popupImage) popupImage.src = ""; // Töröljük a képet, hogy ne villanjon be
+            };
+
+            galleryTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    openImageModal(trigger.src);
+                });
+            });
+
+            if (imageModalCloseBtn) imageModalCloseBtn.addEventListener('click', closeImageModal);
+            if (imageModalOverlay) imageModalOverlay.addEventListener('click', closeImageModal);
+
+            
+            // --- Bezárás Esc billentyűvel (Mindkét modalra) ---
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") {
+                    if (impressumModal && !impressumModal.classList.contains('hidden')) {
+                        closeImpressumModal();
+                    }
+                    if (imageModal && !imageModal.classList.contains('hidden')) {
+                        closeImageModal();
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
